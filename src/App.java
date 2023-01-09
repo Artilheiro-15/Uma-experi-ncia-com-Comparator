@@ -16,13 +16,12 @@ public class App {
     list.add(new Product("Tablet", 400.0));
 
     //aki eu fiz uma vareavel comp que vai ser um objeto do tipo Comparator<Product>
-    Comparator<Product> comp = new Comparator<Product>() {
-      // e para definir esse objeto eu criei uma claas anonima aki mesmo dentro do programa principal
-      //eu nao vou mais presisar ter uma class separada
-      @Override
-      public int compare(Product p1, Product p2) {
-        return p1.getName().toUpperCase().compareTo(p2.getName().toUpperCase());
-      }
+
+    //Agora e o seguinte essa declaraçao de class aki ela e muito gramde para deixar isso aki muito mais enchuto
+    //eu vou começar agora a usar as expreçao lambida
+
+    Comparator<Product> comp = (p1, p2) -> {
+      return p1.getName().toUpperCase().compareTo(p2.getName().toUpperCase());
     };
 
     list.sort(comp);
