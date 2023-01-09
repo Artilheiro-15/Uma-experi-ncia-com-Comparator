@@ -1,4 +1,3 @@
-import entities.MyComparator;
 import entities.Product;
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -20,11 +19,11 @@ public class App {
     //Agora e o seguinte essa declaraçao de class aki ela e muito gramde para deixar isso aki muito mais enchuto
     //eu vou começar agora a usar as expreçao lambida
 
-    Comparator<Product> comp = (p1, p2) -> {
-      return p1.getName().toUpperCase().compareTo(p2.getName().toUpperCase());
-    };
-
-    list.sort(comp);
+    list.sort((p1, p2) ->
+      p1.getName().toUpperCase().compareTo(p2.getName().toUpperCase())
+    );
+    //entao agora ta so desse geito eu chamo list.sort e como argumento do meu sort eu coloquei uma expreçao lambida
+    //que e uma funçao anonima que eu posso definir de uma forma bem consisa bem resulmida
 
     for (Product p : list) {
       System.out.println(p);
